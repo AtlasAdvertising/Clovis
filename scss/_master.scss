@@ -13,10 +13,10 @@ a {
 // Buttons 
 .button,
 .SubmitButton,
-.FormButton {
+.FormButton,
+#emailBtn {
 	background: $orange;
 	border: 0;
-	border-radius: 5px;
 	color: #fff;
 	display: inline-block;
 	font-family:'Avenir W01', sans-serif;
@@ -159,9 +159,8 @@ header {
 	}
 	#site-logo {
 		background: $white;
-		box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.16);
-		height: 300px;
-		margin: 0 0 -176px;
+		box-shadow: 5px -10px 10px 0px rgba(0,0,0,0.16);
+		margin: 0 0 -190px;
 		text-align: center;
 	}
 	#header-social {
@@ -212,6 +211,8 @@ header {
 			font-family: 'FontAwesome';
 			font-size: 18px;
 			margin: 0 5px 0 0;
+			position: relative;
+			top: 3px;
 		}
 	}
 }
@@ -221,7 +222,9 @@ header {
 #utility-wrapper {
 	.utility-nav {
 		display: table;
+		float: right;
 		height: 30px;
+		margin: 0 15px 0 0;
 	}
 	.utility-nav-list {
 		display: table-cell;
@@ -266,12 +269,20 @@ header {
 	position: relative;
 	z-index: 5;
 	.inner-wrapper {
-		float: right;
+		width: 100%;
 		ul#menuElem {
 			display: table;
+			float: right;
 			list-style: none;
 			margin: 0;
-			padding: 0;
+			padding: 4px 0 0;
+			> li:hover {
+				background: $white;
+				> a {
+					color: $orange;
+					text-decoration: none;
+				}
+			}
 			li {
 				display: table-cell;
 				position: relative;
@@ -281,48 +292,41 @@ header {
 					display: inline-block;
 					font-family:'Avenir W01', sans-serif;
 					font-weight: 900;
-					font-size: 19px;
-					margin: 0 15px;
+					font-size: 14px;
+					margin: 0 10px;
 					padding: 20px 0;
-					text-align: center;
-					width: 140px;
+					width: 110px;
 					@include breakpoint(large) {
-						margin: 0 25px;
+						margin: 0 12px;
 					}
 				}
 				&:last-child a {
 					margin-right: 0;
 				}
-				> a:hover {
-					color: $blue;
-					text-decoration: none;
-				}
 				ul {
+					background: $white; 
+					border-bottom: 3px solid $dark-red;
+					box-shadow: 2px 2px 3px 0px rgba(51,51,51,0.5);
 					display: none;
-					position: absolute; 
-					top: 100%; 
 					left: 0; 
-					background: rgba(34,34,34,0.85); 
+					list-style: none; 
+					padding: 10px 0;
+					position: absolute; 
 					top: 100%; 
 					width: 225px; 
 					z-index: 9999; 
-					list-style: none; 
-					padding: 10px 0;
-					-webkit-box-shadow: 2px 2px 3px 0px rgba(51,51,51,0.5);
-					-moz-box-shadow: 2px 2px 3px 0px rgba(51,51,51,0.5);
-					box-shadow: 2px 2px 3px 0px rgba(51,51,51,0.5);
 					li {
 						display: block;
 						float: none;
 						padding: 0;
 						position: relative;
 						&:hover {
-							background: $blue;
+							background: $orange;
 						}
 						a {
-							font-family: 'Roboto', sans-serif;
+							font-family:'Avenir W01', sans-serif;
 							font-size: 15px; 
-							color: #fff;
+							color: $black;
 							padding: 7px 0;
 							line-height: 20px;
 							text-align: left;
@@ -357,40 +361,70 @@ header {
 
 // Footer 
 #footer-wrapper {
-	background: $black;
-	color: $light-grey;
-	font-family: 'Roboto', sans-serif;
-	font-size: 14px;
+	background: $dark-red;
+	color: $white;
 	padding: 30px 0;
-	a {
-		color: $light-grey;
-		&:hover {
-			color: $blue;
-		}
+}
+.contact-wrapper {
+	color: $white;
+	font-family:'Avenir W01', sans-serif;
+	.office-name {
+		font-size: 17px;
+		font-weight: 900;
+	}
+	.office-address:before {
+		content:"\f041";
+	}
+	.office-phone:before {
+		content: "\f095";
+	}
+	.office-email:before {
+		content: "\f0e0";
+	}
+	.office-address,
+	.office-phone,
+	.office-email {
+		font-size: 13px;
+		font-weight: 300;
+	}
+	a.office-email {
+		color: $white;
+	}
+	.office-address:before,
+	.office-phone:before,
+	.office-email:before
+	{
+		color: $orange;
+		display: inline-block;
+		font-family: 'FontAwesome';
+		font-size: 20px;
+		margin-right: 10px;
+		position: relative;
+		text-align: center;
+		top: 3px;
+		width: 19px;
 	}
 }
 
-.logo-wrapper {
-	text-align: right;
-	img {
-		max-width: 40%;
-		&:first-child {
-			margin-right: 10%;
-		}
-	}
+.signup-header {
+	font-family:'Avenir W01', sans-serif;
+	font-size: 18px;
+	font-weight: 900;
 }
 
 .open-close-wrapper {
 	margin-top: 30px;
 	#open-close {
 		cursor: pointer;		
+		font-family:'Avenir W01', sans-serif;
+		font-size: 14px;
     position: relative;
     text-align: center;
     width: 100%;
     &:before,
     &:after {
     	content: "";  
-    	border-top: 1px solid $light-grey;  
+    	border-top: 1px solid rgba(255,255,255,0.2);  
     	position: absolute;  
 	    top: 10px;  
 	    width: 44%;
@@ -404,51 +438,56 @@ header {
 	}
 }
 
+.copyright-wrapper {
+	background: $white;
+	.copyright {
+		color: $black;
+		font-family:'Avenir W01', sans-serif;
+		font-size: 14px;
+		font-weight: 900;
+		padding: 20px 0;
+		text-align: center;
+	}
+}
+
 
 // Site Map
 #sitemap-wrapper {
-	background: $black;
+	background: $white;
+	font-family:'Avenir W01', sans-serif;
 	.sitemap {
-		display:none; 
+		display: none; 
 		margin: 0 0 30px;
 		ul {
+			list-style: none; 
 			margin: 5px 0 0; 
 			padding: 0; 
-			list-style: none; 
 			text-align: left;
 			li {
-				width: 10%;
-				margin: 0 12% 0 0;
 				float: left;
+				margin: 0 7% 0 0;
+				width: 10%;
 				&:last-child {
 					margin: 0;
 				}
 				a {
-					color:#ffffff; 
-					font-size: 17px;
-					font-family: 'Bitter', serif;
+					color: $black;
+					font-size: 18px;
+					font-weight: 900;
 					&:hover {
-						color: #afb0b1; 
+						color: $grey; 
 						text-decoration: none;
 					}
-				}
-				> a {
-					font-weight: 500;
 				}
 				ul {
 					li {
 						float: none; 
-						width: 100%; 
 						padding: 5px 0;
+						width: 100%; 
 						a {
-							color:#afb0b1; 
-							font-family: 'Roboto', sans-serif;
+							color: $dark-grey;
 							font-size:14px; 
-							text-transform: none;
-							&:hover {
-								color: #ffffff;
-								text-decoration: none;
-							}
+							font-weight: 300;
 						}
 					}
 				}
