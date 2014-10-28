@@ -1,0 +1,407 @@
+/* Secondary */
+
+// Header Image
+.secondary-header-wrapper {
+	color: $black;
+	font-family: 'Patua One', serif;
+	font-size: 35px;
+	margin: 0 0 20px;
+	position: relative;
+	img {
+		max-width: 100%;
+		width: 100%;
+	}
+}
+
+.section-header {
+	position: absolute;
+	bottom: 0;
+	background: rgba(255,255,255,0.8);
+	padding: 25px 40px 25px 50px;
+}
+
+// No Header Image
+.secondary-header-wrapper.no-image {
+	color: #fff;
+	font-size: 25px;
+	margin: 0px 0 100px;
+	.section-header {
+		background: rgba(5,93,185,0.85);
+		bottom: 25px;
+		padding: 20px 30px 20px 40px;
+	}
+}
+
+// Breadcrumb
+.breadCrumbs,
+.breadcrumbs-wrapper {
+	a {
+		font-family: 'Avenir W01', sans-serif;
+		font-size: 12px;
+		color: #666;
+		font-weight: 500;
+		&:hover {
+			color: $blue;
+			text-decoration: none;
+		}
+	}
+	.breadcrumbHome {
+		color: $blue;
+		font-size: 18px;
+		&:hover {
+			color: #666;
+		}
+	}
+	.CMSBreadCrumbsCurrentItem {
+		font-weight: 800;
+	}
+	.seperator {
+		margin: 0 2px;
+		display: inline;
+	}
+}
+
+
+// My Fav's
+.secondary-wrapper {
+	.PageUtility { 
+		z-index: 1;
+		.PageUtility_Wrapper { 
+			width: 320px; 
+			#Utility_MyFavorites, 
+			#Utility_AddPage, 
+			#Utility_Print { 
+				border: 0; 
+				color: #666; 
+				font-size: 12px; 
+				font-family: Helvetica, Arial, sans-serif; 
+				font-weight: normal; 
+				padding: 0 10px 0 0;
+				&:hover {
+					color: $blue;
+					text-decoration: none;
+				} 
+			}
+			#Utility_MyFavorites:after, 
+			#Utility_AddPage:after, 
+			#Utility_Print:after { 
+				content: ': :'; 
+				padding-left: 7px; 
+			}
+			.addthis_button { 
+				font-weight: normal; 
+				&:hover {
+					color: $blue;
+					text-decoration: none;
+				}
+			}
+			#Utility_Share { 
+				padding: 0; 
+			}
+			.ImgBg { 
+				display: none; 
+			}
+		}
+		.PageUtility_Dropdown { 
+			-webkit-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.64); 
+			-moz-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.64); 
+			box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.64); 
+		}
+	}
+}
+
+
+// Secondary Nav 
+.secondary-wrapper {
+	.nav-wrapper {
+		margin: 10px 0 20px 10px;
+		ul {
+			list-style: none;
+			padding: 0;
+			li {
+				margin:0 0 5px 0;
+				float: left;
+				position: relative;
+				> a:not(:only-child):after {
+					content: "\f0d7"; 
+					font-family: "FontAwesome"; 
+					font-size: 12px; 
+					margin-left: 5px;
+				}
+				a {
+					color: $blue; 
+					background-color: #FFFFFF; 
+					text-align: left; 
+					font-family: Arial, sans-serif; 
+					font-size: 14px; 
+					text-transform: none; 
+					font-weight: normal; 
+					padding: 5px 10px; 
+					border: 1px solid $blue;
+					display: inline-block;
+					margin-left: -1px;
+					&.Active {
+						background-color: $blue; 
+						color: #FFFFFF;
+					}
+					&:hover {
+						color:#ffffff; 
+						background-color: $blue;
+						text-decoration: none;
+					}
+				}
+				&.HighLighted a {
+					background-color: $blue; 
+					color: #FFFFFF;
+					display: inline-block;
+					white-space: nowrap;
+				}
+				&:hover {
+					ul {
+						display: block;
+					}
+				}
+				ul {
+					display: none;
+					position: absolute;
+					top: 102%;
+					background: #5387D4;
+					border-radius: 2px;
+					overflow: hidden;
+					padding: 5px 0;
+					z-index: 10;
+					li {
+						margin-bottom: 0;
+						a {
+							background: transparent;
+							border: 0;
+							&:hover {
+								background: #4773B5;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+// Secondary Content
+.secondary-content {
+	color: $grey;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	padding: 0 0 50px;
+	blockquote {
+		border-left: 4px solid $blue;
+		margin: 20px 0 20px 50px;
+	}
+	a {
+		text-decoration: none;
+		font-weight: 900;
+		color: $blue;
+		&:hover {
+			color: #333;
+		}
+	}
+	h1, h2, h3, h5, h6 {
+		font-family: 'Bitter', serif;
+		font-weight: 800;
+		color: $dark-grey;
+	}
+	h1 {
+		font-size: 30px;
+	}
+	h2 {
+		font-size: 28px;
+	}
+	h3 {
+		font-size: 20px;
+	}
+	h4 {
+		font-family: 'Roboto', sans-serif;
+		font-size: 14px;
+	}
+	h5 {
+		font-size: 16px;
+	}
+	h6 {
+		font-size: 14px;
+	}
+	img {
+		max-width: 100%;
+	}
+}
+
+
+// Widgets
+.widget-wrapper {
+	img {
+		max-width: 100%;
+	}
+	.widget-block h2,
+	.widget-title,
+	.twitter-wrapper h2,
+	.SidebarTitle {
+		font-size: 20px;
+		font-family: 'Bitter', serif;
+		font-weight: 800;
+		color: #2B2B2D;
+	}
+	.signup-text {
+		font-family: 'Avenir W01', sans-serif;
+		font-size: 13px;
+		font-weight: 400;
+		line-height: 16px;
+		margin-bottom: 10px;
+		h4 {
+			font-size: 16px;
+			font-weight: 900;
+			margin-bottom: 2px;
+		}
+	}
+	.SidebarText,
+	.widget-block-content {
+		font-family: 'Roboto', sans-serif;
+		font-size: 13px;
+		font-weight: 400;
+		line-height: 16px;
+		margin-top: 10px;
+	}
+	.SidebarText a {
+		display: block;
+		font-style: italic;
+	}
+	.events-widget {
+		position: relative;
+		ul {
+			padding: 0;
+			li:before {
+				left: 15px;
+			}
+		}
+		.view-all-link {
+			font-family: 'Avenir W01', sans-serif;
+			font-weight: 900;
+			font-size: 12px;
+			color: $blue;
+			position: absolute;
+			top: 18px;
+			right: 0;
+		}
+	}
+}
+
+.widget-wrapper {
+	.ConnectWithUs {
+		.Controls {
+			text-align: center;
+			a {
+				color: $blue;
+				display: block;
+				&:hover {
+					color: $grey;
+				}
+			}
+		}
+		i.fa.fa-caret-left,
+		i.fa.fa-caret-right {
+			background: #666;
+			padding: 5px 10px;
+			color: #fff;
+			border-radius: 2px;
+			font-size: 16px;
+			cursor: pointer;
+			&:hover {
+				background: $blue;
+			}
+		}
+		i.fa.fa-caret-right {
+			margin-left: 5px;
+		}
+		.Photo {
+			width: auto;
+			height: auto;
+			background: none;
+			img {
+				height: auto;
+				width: auto;				
+			}
+		}
+		.FirstName {
+			color: $grey;
+			font-family: 'Bitter', serif;
+			font-weight: 800;
+			font-size: 16px;
+			float: left;
+		}
+		.LastName {
+			font-family: 'Bitter', serif;
+			font-weight: 800;
+			font-size: 16px;
+			margin-bottom: 0;
+			padding-left: 4px;
+			display: inline-block;
+		}
+		.Title {
+			font-family: "Roboto", sans-serif;
+			font-weight: 400;
+			font-size: 14px;
+		}
+		.Contact {
+			a {
+				color: $blue;
+				display: inline;
+				font-style: normal;
+				position: relative;
+				top: 2px;
+				&:hover {
+					color: $grey;
+				}
+			}
+			i {
+				font-size: 18px;
+				color: #A9A8A2;
+				position: relative;
+				top: 2px;
+				&:hover {
+					color: $blue;
+				}
+			}
+		}
+	}
+}
+
+#Sidebar_Downloads {
+	.SidebarText,
+	.SidebarListIcon {
+		display: none;
+	}
+	.SidebarList ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	.SidebarListMyFavorites {
+		float: right;
+		clear: right;
+		cursor: pointer;
+	}
+	.SidebarListText a {
+		font-size: 14px;
+	}
+}
+
+ul.LinksList {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	li {
+		margin-bottom: 5px;
+	}
+	a {
+		display: block;
+		font-size: 14px;
+	}
+}

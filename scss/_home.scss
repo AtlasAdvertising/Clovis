@@ -1,0 +1,110 @@
+/* Home */
+
+// Hero Slider 
+#hero-wrapper {
+	max-height: 800px;
+	margin-bottom: 0;
+	overflow: hidden;
+	position: relative;
+	z-index: 0;
+	.caption {
+		position: absolute;
+		top: 30%;
+		background: rgba(255,255,255,0.85);
+		padding: 30px 50px;
+		font-family: 'Bitter', serif;
+		font-size: 22px;
+		font-weight: 900;
+		text-align: center;
+		@include breakpoint(small) {
+			font-size: 22px;
+			text-align: left;
+			top: 8%;
+		}
+		@include breakpoint(medium) {
+			font-size: 28px;
+			top: 45%;
+		}
+		@media (min-width: 1500px) {
+			top: 36%;
+		}
+	}
+	.image img {
+		width: auto;
+		height: 400px;
+		@include breakpoint(small) {
+			width: 100%;
+			height: auto;
+		}
+	}
+	.slick-prev, 
+	.slick-next {
+		top: 30%;
+	}
+	button.slick-prev:before,
+	button.slick-next:before {
+		background: $black;
+		font-family: 'FontAwesome';
+		font-size: 25px;
+		padding: 35px 20px;
+		position: absolute;
+	}
+	button.slick-prev:before {
+		content: "\f053";
+		left: 30px;
+	}	
+	button.slick-next:before {
+		content: "\f054";
+		right: 30px;
+	}
+}
+
+
+// Map Area 
+.map-wrapper {
+	margin: 0 0 45px;
+	.map {
+		img {
+			width: 100%;
+		}
+	}
+	.map-link {
+    padding: 50px 0 40px;
+    text-align: center;
+    @include breakpoint(small) {
+			width: 50%;
+			display: inline-block;
+			margin-top: -239px;
+			background: rgba(255,255,255,0.8);
+    }
+    @include breakpoint(medium) {
+    	opacity: 0;
+    	transition: opacity 0.5s;
+    }
+    img {
+    	transition: opacity 0.5s;
+    	&:hover {
+				opacity: 0.7;
+    	}
+    }
+	}
+}
+
+.map-wrapper .container:hover .map-link {
+	opacity: 1;
+}
+
+
+// Web Parts 
+.webpart-title {
+	color: $dark-grey;
+	font-family: 'Bitter';
+	font-weight: 800;
+	font-size: 22px;
+	text-align: center;
+	@include breakpoint(small) {
+		text-align: left;
+		font-size: 28px;
+	}
+}
+
