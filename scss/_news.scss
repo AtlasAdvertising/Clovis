@@ -1,37 +1,49 @@
-/* News */
+/* News and Events */
 
-.secondary-wrapper.news,
-.secondary-content.news {
-	margin-top: 15px;
+// Global
+ul.news-list {
+	.Date {
+		font-style: italic;
+		margin: 0;
+	}
 }
 
-ul.news-list {
-	list-style: none;
-	margin: 10px 0 0;
-	padding: 0;
-	position: relative;
-	li {
-		margin: 0 0 20px 60px;
-	}
-	i {
-		left: 30px;
-		font-size: 20px;
-		position: absolute;		
-	}
-	.date {
-		font-size: 14px;
-	}
-	.title {
-		font-weight: 900;
-		color: $black;
-	}
-	a.title {
-		color: $blue;
-		&:hover {
-			color: $black;
+
+// News Page, Events Page, and Media Center
+.secondary-content-wrapper {
+	ul.news-list,
+	ul.events-list {
+		font-family:'Avenir W01', sans-serif;
+		font-size: 13px;
+		list-style: none;
+		margin: 20px 0 0;
+		overflow: hidden;
+		padding: 0;
+		position: relative;
+		li {
+			margin: 0 0 30px;
 		}
-	}
-	.link {
-		font-size: 14px;
+
+		.Title {
+			font-size: 18px;
+			line-height: 21px;
+			margin: 0 0 5px;
+		}
+		.Title a {
+			color: $dark-red;
+			font-weight: 900;
+			&:hover {
+				color: $orange;
+			}
+		}
+		.Summary {
+			line-height: 15px;
+			margin: 0 0 2px;
+		}
+		.Link {
+			a {
+				font-weight: 900;
+			}
+		}
 	}
 }

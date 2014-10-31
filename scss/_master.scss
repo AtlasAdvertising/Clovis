@@ -2,9 +2,9 @@
 
 // Links
 a {
-	color: $blue;
+	color: $orange;
 	&:hover {
-		color: $dark-grey;
+		color: $dark-red;
 		text-decoration: none;
 	}
 }
@@ -14,22 +14,22 @@ a {
 .button,
 .SubmitButton,
 .FormButton,
-#emailBtn {
+#emailBtn,
+.map-button-wrapper a {
 	background: $orange;
 	border: 0;
-	color: #fff;
+	color: $white;
 	display: inline-block;
 	font-family:'Avenir W01', sans-serif;
 	font-size: 17px;
 	font-weight: 900;	
 	margin: 10px 0;
 	padding: 8px 20px;
-	transition: background 0.5s;
+	text-align: center;
+	text-transform: uppercase;
+	transition: background 0.5s, color 0.25s;
 	a {
 		color: #fff;
-	}
-	&:hover {
-		@extend %button-over;
 	}
 }
 
@@ -158,10 +158,20 @@ header {
 		padding: 0;
 	}
 	#site-logo {
-		background: $white;
-		box-shadow: 5px -10px 10px 0px rgba(0,0,0,0.16);
-		margin: 0 0 -190px;
+		background: url('/Clovis/images/logo-secondary.png') $white no-repeat center top;
+		border-top: 15px solid $white;
+		border-bottom: 15px solid $white;
+		box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.15);
+		height: 158px;
+		margin: 0 auto -190px;
+		padding: 15px 0 25px;
+		position: relative;
 		text-align: center;
+		width: 220px;
+		z-index: 6;
+		&:hover {
+			background-position-y: -125px;
+		}
 	}
 	#header-social {
 		display: table-cell;
@@ -175,6 +185,7 @@ header {
 			a {
 				color: $black;
 				font-size: 18px;
+				transition: color 0.25s;
 				&:hover {
 					color: $orange;
 				}
@@ -196,6 +207,7 @@ header {
 		font-family: 'FontAwesome';
 		font-size: 18px;
 		padding: 0 10px;
+		transition: color 0.25s;
 		&:hover {
 			color: $orange;
 			cursor: pointer;
@@ -241,6 +253,7 @@ header {
 				font-family:'Avenir W01', sans-serif;
 				font-size: 14px;
 				font-weight: 900;
+				transition: color 0.25s;
 				&:hover {
 					color: $white;
 				}
@@ -262,10 +275,16 @@ header {
 	}
 }
 
+#utility-wrapper.shadow {
+	box-shadow: inset 2px 0px 5px 0px rgba(0,0,0,0.15);
+}
+
 
 // Main Nav
 #nav-wrapper {
 	background: $dark-red;
+	margin-left: -1000px;
+	padding-left: 1000px;
 	position: relative;
 	z-index: 5;
 	.inner-wrapper {
@@ -276,6 +295,7 @@ header {
 			list-style: none;
 			margin: 0;
 			padding: 4px 0 0;
+			width: 100%;
 			> li:hover {
 				background: $white;
 				> a {
@@ -292,12 +312,14 @@ header {
 					display: inline-block;
 					font-family:'Avenir W01', sans-serif;
 					font-weight: 900;
-					font-size: 14px;
-					margin: 0 10px;
+					font-size: 13px;
+					margin: 0 5px;
 					padding: 20px 0;
-					width: 110px;
+					width: 95px;
 					@include breakpoint(large) {
+						font-size: 14px;
 						margin: 0 12px;
+						width: 110px;
 					}
 				}
 				&:last-child a {
@@ -365,6 +387,51 @@ header {
 	color: $white;
 	padding: 30px 0;
 }
+
+.signup-header {
+	font-family:'Avenir W01', sans-serif;
+	font-size: 18px;
+	font-weight: 900;
+	margin: 0 0 10px;
+}
+
+input#email,
+input#emailBtn {
+	float: left;
+	outline: 0;
+}
+
+input#email {
+	background: rgba(255,255,255,0.7);
+	border: 0;
+	height: 40px;
+	padding: 5px;
+}
+
+input#email::-webkit-input-placeholder {
+   color: $white;
+}
+
+input#email:-moz-placeholder { /* Firefox 18- */
+   color: $white;
+}
+
+input#email::-moz-placeholder {  /* Firefox 19+ */
+   color: $white;
+}
+
+input#email:-ms-input-placeholder {  
+   color: $white;
+}
+
+input#emailBtn {
+	margin: 0 0 0 5px;
+	transition: color 0.25s;
+	&:hover {
+		color: $dark-grey;
+	}
+}
+
 .contact-wrapper {
 	color: $white;
 	font-family:'Avenir W01', sans-serif;
@@ -406,12 +473,6 @@ header {
 	}
 }
 
-.signup-header {
-	font-family:'Avenir W01', sans-serif;
-	font-size: 18px;
-	font-weight: 900;
-}
-
 .open-close-wrapper {
 	margin-top: 30px;
 	#open-close {
@@ -447,6 +508,12 @@ header {
 		font-weight: 900;
 		padding: 20px 0;
 		text-align: center;
+		a {
+			color: $dark-red;
+			&:hover {
+				color: $orange;
+			}
+		}
 	}
 }
 

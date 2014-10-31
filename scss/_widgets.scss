@@ -1,0 +1,234 @@
+/* Widgets */
+
+// Widget Area Wrapper
+.widget-wrapper {
+	color: $red;
+	font-family:'Avenir W01', sans-serif;
+	font-size: 13px;
+	line-height: 1.25;
+	padding: 20px 0 0;
+	img {
+		max-width: 100%;
+	}
+}
+
+
+// Titles
+.widget-block h2,
+.widget-title,
+.twitter-wrapper h2,
+.SidebarTitle {
+	background: $red;
+	color: $white !important;
+	font-size: 20px;
+	font-family:'Avenir W01', sans-serif;
+	font-weight: 900;
+	padding: 10px 0;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+
+// Containers
+.widget-block,
+.SidebarWrapper,
+.events-widget {
+	margin: 0 0 25px;
+}
+
+
+// Events
+.widget-wrapper {
+	.events-widget {
+		position: relative;
+		ul {
+			list-style: none;
+			padding: 0 0 0 40px;
+
+		}
+		.event {
+			margin: 10px 0;
+			&:before {
+				content: "\f073";
+				font-family: 'FontAwesome';
+				position: absolute;
+				left: 10px;
+				font-size: 18px;
+				color: $black;
+			}
+		}
+		.date {
+			font-size: 11px;
+			margin: 0 0 3px 0;
+		}
+		.description {
+			font-size: 12px;
+		}
+		.view-all-link {
+			display: none;
+		}
+		a {
+			color: $red;
+			font-weight: 900;
+			&:hover {
+				color: $black;
+			}
+		}
+	}
+}
+
+
+// Text styles for Photo Callout and Did You Know
+.widget-wrapper {	
+	.SidebarText,
+	.widget-block-content {
+		font-size: 13px;
+		font-weight: 400;
+		line-height: 16px;
+		margin-top: 10px;
+	}
+}
+
+
+// Photo Callout Link
+.widget-wrapper {
+	.SidebarText a {
+		color: $red;
+		display: block;
+		font-style: italic;
+		font-weight: 900;
+		&:hover {
+			color: $black;
+		}
+	}
+}
+
+
+// Connect With Us
+.widget-wrapper {
+	.ConnectWithUs {
+		.Controls {
+			text-align: center;
+			a {
+				display: block;
+			}
+		}
+		i.fa.fa-caret-left,
+		i.fa.fa-caret-right {
+			background: #666;
+			padding: 5px 10px;
+			color: #fff;
+			border-radius: 2px;
+			font-size: 16px;
+			cursor: pointer;
+			&:hover {
+				background: $blue;
+			}
+		}
+		i.fa.fa-caret-right {
+			margin-left: 5px;
+		}
+		.Photo {
+			width: auto;
+			height: auto;
+			background: none;
+			img {
+				height: auto;
+				width: auto;				
+			}
+		}
+		.FirstName {
+			color: $grey;
+			font-family: 'Bitter', serif;
+			font-weight: 800;
+			font-size: 16px;
+			float: left;
+		}
+		.LastName {
+			font-family: 'Bitter', serif;
+			font-weight: 800;
+			font-size: 16px;
+			margin-bottom: 0;
+			padding-left: 4px;
+			display: inline-block;
+		}
+		.Title {
+			font-family: "Roboto", sans-serif;
+			font-weight: 400;
+			font-size: 14px;
+		}
+		.Contact {
+			a {
+				color: $blue;
+				display: inline;
+				font-style: normal;
+				position: relative;
+				top: 2px;
+				&:hover {
+					color: $grey;
+				}
+			}
+			i {
+				font-size: 18px;
+				color: #A9A8A2;
+				position: relative;
+				top: 2px;
+				&:hover {
+					color: $blue;
+				}
+			}
+		}
+	}
+}
+
+
+// Downloads
+#Sidebar_Downloads {
+	.SidebarText {
+		display: none;
+	}
+	.SidebarList ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		li {
+			margin: 10px 0;
+		}
+	}
+	.SidebarListIcon {
+		display: inline-block;
+		margin: 0 10px 0 0;
+	}
+	.SidebarListMyFavorites {
+		clear: right;
+		cursor: pointer;
+		float: right;
+	}
+	.SidebarListText {
+		display: inline;
+		a {
+			color: $red;
+			font-family: Helvetica, Arial, sans-serif;
+			font-size: 11px;
+			font-weight: normal;
+			&:hover {
+				color: $black;
+			}
+		}
+	}
+}
+
+
+// Quick Links
+ul.LinksList {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	li {
+		margin-bottom: 5px;
+	}
+	a {
+		display: block;
+		font-size: 14px;
+	}
+}
