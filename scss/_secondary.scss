@@ -28,12 +28,15 @@
 // No Header Image
 .secondary-header-wrapper.no-image {
 	color: #fff;
-	font-size: 25px;
-	margin: 0 0 70px;
+	margin: 0 0 25px;
 	.section-header {
 		background: $black;
-		bottom: 25px;
-		padding: 5px 30px 5px 40px;
+		bottom: 0;
+		line-height: 65px;
+		padding: 0 30px 0 40px;
+		position: relative;
+		text-align: right;
+		width: 100%;
 	}
 }
 
@@ -109,8 +112,6 @@
 			}
 		}
 		.PageUtility_Dropdown { 
-			-webkit-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.64); 
-			-moz-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.64); 
 			box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.64); 
 		}
 	}
@@ -124,8 +125,8 @@
 		list-style: none;
 		padding: 0;
 		li {
-			margin:0 0 5px 0;
 			float: left;
+			margin:0 0 5px 0;
 			position: relative;
 			> a:not(:only-child):after {
 				content: "\f0d7"; 
@@ -134,28 +135,27 @@
 				margin-left: 5px;
 			}
 			a {
+				border: 1px solid $dark-red;
 				color: $dark-red; 
-				background-color: #fff; 
-				text-align: left; 
+				display: inline-block;
 				font-family: Arial, sans-serif; 
 				font-size: 14px; 
-				text-transform: none; 
 				font-weight: normal; 
-				padding: 5px 10px; 
-				border: 1px solid $dark-red;
-				display: inline-block;
 				margin-left: -1px;
+				padding: 5px 10px; 
+				text-align: left; 
+				text-transform: none; 
 				&.Active {
 					background-color: $dark-red; 
 					color: #FFFFFF;
 				}
 				&:hover {
-					color:#ffffff; 
 					background-color: $dark-red;
+					color:#ffffff; 
 					text-decoration: none;
 				}
 			}
-			&.HighLighted a {
+			&.HighLighted > a {
 				background-color: $dark-red; 
 				color: #FFFFFF;
 				display: inline-block;
@@ -169,21 +169,21 @@
 		}
 	}
 	ul li	ul {
+		background: $dark-red;
+		border-radius: 2px;
 		display: none;
+		overflow: hidden;
 		position: absolute;
 		top: 102%;
-		background: #5387D4;
-		border-radius: 2px;
-		overflow: hidden;
-		padding: 5px 0;
 		z-index: 10;
 		li {
 			margin-bottom: 0;
 			a {
-				background: transparent;
 				border: 0;
+				color: $white;
 				&:hover {
-					background: #4773B5;
+					background: $white;
+					color: $dark-red;
 				}
 			}
 		}
@@ -198,9 +198,9 @@
 	font-size: 13px;
 	padding: 25px 0 50px;
 	a {
-		text-decoration: none;
-		font-weight: 300;
 		color: $dark-red;
+		font-weight: 300;
+		text-decoration: none;
 		&:hover {
 			color: $orange;
 		}
@@ -210,8 +210,8 @@
 		margin: 10px 0;
 	}
 	h1, h2, h3, h4, h5, h6 {
-		font-weight: 900;
 		color: #333;
+		font-weight: 900;
 	}
 	h1 {
 		font-size: 30px;

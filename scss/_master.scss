@@ -50,19 +50,19 @@ nav#my-menu {
 }
 #search-mobile{
 	color: #000; 
-	width: 100%; 
 	padding: 2px 5px; 
+	width: 100%; 
 }
 .mobileBtn {
+	color: $white;
+	font-size: 30px; 
+	padding: 5px; 
 	position:absolute; 
 	right: 10px; 
-	top: 25px; 
-	font-size: 30px; 
+	top: 20px; 
 	z-index: 9999; 
-	padding: 5px; 
-	color: $blue;
-	@include breakpoint(small) {
-		top: 65px;
+	&:hover {
+		color: $white;
 	}
 }
 .DesignMode #my-menu {
@@ -153,24 +153,36 @@ ul#mobile-social {
 
 // Header
 header {
-	background: $white;
+	background: $dark-red;
+	height: 75px;
+	@include breakpoint(small) {
+		background: $white;	
+		height: auto;	
+	}
 	.site-logo-wrapper {
 		padding: 0;
 	}
 	#site-logo {
-		background: url('/Clovis/images/logo-secondary.png') $white no-repeat center top;
-		border-top: 15px solid $white;
-		border-bottom: 15px solid $white;
-		box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.15);
-		height: 158px;
-		margin: 0 auto -190px;
-		padding: 15px 0 25px;
+		background: url('/Clovis/images/mobile-logo.png') no-repeat center;
+		background-size: contain;
+		height: 75px;
+		margin: 0 0 0 10px;
 		position: relative;
 		text-align: center;
-		width: 220px;
+		width: 100%;
 		z-index: 6;
-		&:hover {
-			background-position-y: -125px;
+		@include breakpoint(small) {
+			background: url('/Clovis/images/logo-secondary.png') $white no-repeat center top;
+			background-size: auto;
+			border-top: 15px solid $white;
+			box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.15);
+			height: 158px;		border-bottom: 15px solid $white;
+			margin: 0 auto -190px;
+			padding: 15px 0 25px;
+			width: 220px;
+			&:hover {
+				background-position-y: -125px;
+			}
 		}
 	}
 	#header-social {
@@ -314,7 +326,7 @@ header {
 					font-weight: 900;
 					font-size: 13px;
 					margin: 0 5px;
-					padding: 20px 0;
+					padding: 8px 0;
 					width: 95px;
 					@include breakpoint(large) {
 						font-size: 14px;
@@ -324,6 +336,11 @@ header {
 				}
 				&:last-child a {
 					margin-right: 0;
+				}
+				&:last-child ul,
+				&:nth-last-child(2) ul {
+					left: auto;
+			    right: 0;
 				}
 				ul {
 					background: $white; 
@@ -353,6 +370,7 @@ header {
 							line-height: 20px;
 							text-align: left;
 							text-transform: none;
+							width: 100%;
 						}
 						a:hover {
 							color: #fff;
@@ -364,11 +382,7 @@ header {
 							left: 100%; 
 							top: 0; 
 							padding-bottom: 10px;
-							background: $blue;
 							border: 0;
-							li:hover {
-								background: $dark-blue;
-							}
 							a:hover {
 								color: #fff;
 							}
