@@ -3,9 +3,15 @@
 
 /* Placeholders */
 %button-over {
-  background: $dark-blue;
-  color: #fff;
+  color: $dark-grey;
   text-decoration: none;
+}
+
+%input {
+  background: #EBEBEB;
+  border: none;
+  outline: 0;
+  padding: 6px 5px;
 }
 
 /* Breakpoint Mixins */

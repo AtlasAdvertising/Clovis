@@ -1,5 +1,13 @@
 /* Master */
 
+// Site Logo Mobile 
+@media (max-width: 768px) {
+	#site-logo {
+		display: block !important;
+	}
+}
+
+
 // Links
 a {
 	color: $orange;
@@ -337,11 +345,6 @@ header {
 				&:last-child a {
 					margin-right: 0;
 				}
-				&:last-child ul,
-				&:nth-last-child(2) ul {
-					left: auto;
-			    right: 0;
-				}
 				ul {
 					background: $white; 
 					border-bottom: 3px solid $dark-red;
@@ -377,18 +380,23 @@ header {
 							background: none;
 						}
 						ul {
-							display: none; 
-							position: absolute; 
-							left: 100%; 
-							top: 0; 
-							padding-bottom: 10px;
 							border: 0;
+							display: none; 
+							padding-bottom: 10px;
+							position: absolute; 
+							left: 100%;
+							top: 0; 
 							a:hover {
 								color: #fff;
 							}
 						}
 					}
 				}
+			}
+			> li:last-child ul,
+			> li:nth-last-child(2) ul {
+				left: auto;
+		    right: 0;
 			}
 		}
 	}
@@ -420,6 +428,10 @@ input#email {
 	border: 0;
 	height: 40px;
 	padding: 5px;
+	width: 100%;
+	@include breakpoint(small) {
+		width: auto;
+	}
 }
 
 input#email::-webkit-input-placeholder {
@@ -439,16 +451,21 @@ input#email:-ms-input-placeholder {
 }
 
 input#emailBtn {
-	margin: 0 0 0 5px;
+	margin: 10px 0 20px;
 	transition: color 0.25s;
 	&:hover {
 		color: $dark-grey;
+	}
+	@include breakpoint(small) {
+		margin: 0 0 0 5px;
+
 	}
 }
 
 .contact-wrapper {
 	color: $white;
 	font-family:'Avenir W01', sans-serif;
+	text-align: right;
 	.office-name {
 		font-size: 17px;
 		font-weight: 900;
@@ -470,6 +487,9 @@ input#emailBtn {
 	}
 	a.office-email {
 		color: $white;
+		&:hover {
+			color: $orange;
+		}
 	}
 	.office-address:before,
 	.office-phone:before,

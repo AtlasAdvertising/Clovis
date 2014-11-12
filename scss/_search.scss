@@ -12,28 +12,29 @@
 		input {
 			outline: 0;
 		}
-		input#p_lt_wpzPagePlaceholder_pageplaceholder_pageplaceholder_lt_wpzSearchResults_SearchDialogWithResults_srchDialog_txtSearchFor {
+		input#p_lt_wpzPagePlaceholder_pageplaceholder_p_lt_wpzSearchResults_SearchDialogWithResults_srchDialog_txtSearchFor {
+			@extend %input;
 		}
-		select#p_lt_wpzPagePlaceholder_pageplaceholder_pageplaceholder_lt_wpzSearchResults_SearchDialogWithResults_srchDialog_drpSearchMode { 
+		select#p_lt_wpzPagePlaceholder_pageplaceholder_p_lt_wpzSearchResults_SearchDialogWithResults_srchDialog_drpSearchMode { 
+			cursor: pointer;
 			height: 30px;
 			width: 100%;
-			cursor: pointer;
+			@extend %input;
 		}
-		input#p_lt_wpzPagePlaceholder_pageplaceholder_pageplaceholder_lt_wpzSearchResults_SearchDialogWithResults_srchDialog_btnSearch { 
-			width: 100%; 
-			position: relative; 
-			display: inline-block; 
-			outline: 0; 
+		input#p_lt_wpzPagePlaceholder_pageplaceholder_p_lt_wpzSearchResults_SearchDialogWithResults_srchDialog_btnSearch { 
+			background: $orange;
 			border: 0;
-			background: $blue;
+			color: #fff;
 			display: block;
-			border: 0;
-			padding: 8px 0;
-			text-transform: uppercase;
 			font-family:'Avenir W01', sans-serif;
 			font-size: 15px;
 			font-weight: 900;
-			color: white;
+			outline: 0; 
+			padding: 8px 0;
+			position: relative; 
+			text-transform: uppercase;
+			transition: color 0.25s;
+			width: 100%; 
 			&:hover {
 				@extend %button-over;
 			}
