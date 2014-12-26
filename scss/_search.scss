@@ -43,4 +43,22 @@
 }
 .SearchResults {
 	margin: 25px 0 55px;
+	a {
+		color: $black;
+		&:hover {
+			color: $orange;
+		}
+	}
+	> div {
+    margin-bottom: 40px !important;
+		a {
+			font-size: 16px;
+		}
+		div:nth-child(2) {
+	    font-size: 0;
+	  }
+	}
+	span a {
+    font-size: 14px;
+	}
 }

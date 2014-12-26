@@ -33,8 +33,13 @@
 	font-size: 12px;
 	line-height: 1.25;
 	padding: 15px 32px 25px;
+	@include breakpoint(small) {
+		font-size: 11px;
+		padding: 10px 25px 25px;
+	}
 	@include breakpoint(large) {
-		padding: 25px 32px 25px 50px;
+		font-size: 12px;
+		padding: 25px 32px 0 50px;
 	}
 }
 
@@ -45,7 +50,6 @@
   box-shadow: 0px 3px 3px 1px rgba(0,0,0,0.15);
   padding: 0;
 	position: relative;
-	z-index: 5;
   .col-sm-8 {
   	padding: 0;
   }
@@ -66,7 +70,7 @@
 		@include breakpoint(small) {
 			font-size: 22px;
 			height: auto;
-			padding: 30px 50px 60px;
+			padding: 20px 40px 20px 25px;
 			text-align: left;
 		}
 		@include breakpoint(medium) {
@@ -87,9 +91,13 @@
 			font-weight: 300;
 			line-height: 18px;
 			@include breakpoint(small) {
+				font-size: 12px;
+				line-height: 16px;
 				width: 70%;
 			}
 			@include breakpoint(large) {
+				font-size: 14px;
+				line-height: 18px;
 				width: 75%;
 			}
 		}
@@ -132,17 +140,38 @@
 			top: auto;
 			width: 49%;
 		}
-		@include breakpoint(large) {
-			bottom: 10%;
+		@include breakpoint(medium) {
+			bottom: 0;
+			top: 65%;
 		}
 		li {
 			margin: 0 3%;
 			@include breakpoint(small) {
 				height: 30px;
-				width: 60px;
+				width: 18%;
+			}
+			@include breakpoint(medium) {
+				display: block;
+				height: 25px;
+				margin: 0 4%;
+				width: auto;
 			}
 			@include breakpoint(large) {
-				margin: 0 4%;
+				height: 30px;
+			}
+		}
+		li button {
+			@include breakpoint(medium) {
+				color: $black;
+				font-family:'Avenir W01', sans-serif;
+				font-size: 14px;
+				font-weight: 900;
+				padding: 4px 0 0 30px;
+				width: 100%;
+				text-align: left;
+			}
+			@include breakpoint(large) {
+				font-size: 16px;
 			}
 		}
 		li button:before {
@@ -151,7 +180,7 @@
 		li button:hover:before {
 			opacity: 1;
 		}
-		li:after {
+		.button-text {
 			bottom: -12px;
 			color: $black;
 			cursor: default;
@@ -162,9 +191,12 @@
 			left: -40px;
 			position: absolute;
 			@include breakpoint(large) {
-				font-size: 10px;
+				left: 30px;
+				font-size: 16px;
+				top: -3px;
 			}
 		}
+		/*
 		li:nth-child(1):after {
 			content: "Gateway to the Sierras";
 		}
@@ -177,6 +209,7 @@
 		li:nth-child(4):after {
 			content: "Magna sed adipiscing";
 		}
+		*/
 		li button:before {
 			font-size: 16px;
 		}
@@ -186,7 +219,7 @@
 		}
 	}
 	.tooltip {
-		@include breakpoint(large) {
+		@include breakpoint(medium) {
 			display: none !important;
 		}
 	}
@@ -228,7 +261,6 @@
 
 // Map Area 
 #home-map-wrapper {
-	height: 260px;
 	padding: 0;
 	position: relative;
 	z-index: 1;
@@ -239,11 +271,13 @@
 		padding: 0;
 	}
 	img {
-		height: 210px;
-		position: absolute;
-		right: 0;
+		float: right;
+		margin-bottom: 75px;
+		width: 250%;
 		@include breakpoint(small) {
+			float: none;
 			height: auto;
+			margin: 0;
 			position: static;
 			right: auto;
 			width: 100%;
@@ -251,22 +285,27 @@
 	}
 }
 .map-button-wrapper {
-	bottom: -260px;
+	bottom: 10px;
 	line-height: 15px;
 	position: absolute;
 	text-align: center;
 	width: 100%;
 	@include breakpoint(small) {
-		bottom: 50%;
+		bottom: 35%;
 		height: 60px;
 		line-height: auto;
+	}
+	@include breakpoint(large) {
+		bottom: 40%;
 	}
 	a {
 		font-size: 14px;
 		transition: margin 0.25s, padding 0.25s, width 0.25s;
 		width: 220px;
 		@include breakpoint(small) {
-			width: 250px;
+			font-size: 17px;
+			line-height: initial;
+			width: 225px;
 		}
 		&:hover {
 			@include breakpoint(small) {
@@ -311,11 +350,29 @@
 	padding: 30px 0;
 	position: relative;
 	z-index: 5;
+	.NewsMobile {
+		height: 200px;
+	}
+	.col-md-4 {
+		margin-bottom: 35px;
+	}
+	.view-all {
+    text-align: right;
+    padding-right: 10px;
+    a {
+    	color: #fff;
+    	&:hover {
+    		color: $orange;
+    	}
+    }
+	}
 }
 
 #home-webparts-wrapper ul.news-list {
 	font-size: 13px;
 	height: 240px;
+	margin: 0;
+	padding: 0;
 	.item {
 		margin: 20px 0;
 	}
@@ -340,6 +397,16 @@
 		font-weight: bold;
 	}
 }
+.NewsMobile {
+	.rsNav {
+		display: table;
+		margin: 10px auto 0;
+	}
+	.rsNavItem:last-child {
+		margin: 0 !important;
+	}
+}
+
 
 .horizontal-gradient {
 	background: rgba(50,42,32,1);

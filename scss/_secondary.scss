@@ -4,9 +4,12 @@
 .secondary-header-wrapper {
 	color: $black;
 	font-family: 'Patua One', serif;
-	font-size: 35px;
+	font-size: 26px;
 	margin: 0 0 20px;
 	position: relative;
+	@include breakpoint(small) {
+		font-size: 35px;
+	}
 	img {
 		max-width: 100%;
 		width: 100%;
@@ -19,9 +22,12 @@
 	color: $white;
 	font-family:'Avenir W01', sans-serif;
 	font-weight: 900;
-	padding: 15px 18px;
+	padding: 5px 15px;
 	position: absolute;
 	right: 0;
+	@include breakpoint(small) {
+		padding: 15px 18px;
+	}
 }
 
 
@@ -35,8 +41,11 @@
 		line-height: 65px;
 		padding: 0 30px 0 40px;
 		position: relative;
-		text-align: right;
+		text-align: center;
 		width: 100%;
+		@include breakpoint(small) {
+			text-align: right;
+		}
 	}
 }
 
@@ -50,7 +59,7 @@
 		color: #666;
 		font-weight: 500;
 		&:hover {
-			color: $blue;
+			color: $red;
 			text-decoration: none;
 		}
 	}
@@ -87,7 +96,7 @@
 				font-weight: normal; 
 				padding: 0 10px 0 0;
 				&:hover {
-					color: $blue;
+					color: $red;
 					text-decoration: none;
 				} 
 			}
@@ -98,9 +107,10 @@
 				padding-left: 7px; 
 			}
 			.addthis_button { 
+				color: #666;
 				font-weight: normal; 
 				&:hover {
-					color: $blue;
+					color: $red;
 					text-decoration: none;
 				}
 			}
@@ -196,7 +206,10 @@
 	color: #666;
 	font-family:'Avenir W01', sans-serif;
 	font-size: 13px;
-	padding: 25px 0 50px;
+	padding-bottom: 50px;
+	@include breakpoint(small) {
+		padding-top: 25px;
+	}
 	a {
 		color: $dark-red;
 		font-weight: 300;

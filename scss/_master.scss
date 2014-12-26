@@ -40,11 +40,30 @@ a {
 		color: #fff;
 	}
 }
+.show-less.button,
+.show-more.button {
+	font-size: 15px;
+	@include breakpoint(small) {
+		font-size: 17px;
+	}
+}
+
+
+// Tooltips
+body .tooltip {
+}
 
 
 // Mobile Menu
 nav#my-menu {
+	background: #F4F2F2;
 	z-index: 999999;
+	> .mm-panel {
+		padding: 0 0 20px;
+	}
+	.mm-list {
+		padding: 0 20px 20px;
+	}
 	.mm-list > li > a, 
 	.mm-list > li > span {
 		line-height: 40px;
@@ -55,6 +74,29 @@ nav#my-menu {
 			right: 28px;
 		}
 	}
+	.mm-list a.mm-subopen + a, 
+	.mm-list a.mm-subopen + span {
+		margin-right: 60px;
+	}
+	.mm-list > li > a.mm-subopen:after,
+	.mm-list > li > a.mm-subopen:before,
+	.mm-list > li:after {
+		border-color: #755309;
+	}
+	.mm-list > li:not(.mm-subtitle):not(.mm-label):not(.mm-search):not(.mm-noresults):after {
+		margin-left: 0;
+	}
+	li a {
+		color: #000;
+		font-family:'Avenir W01', sans-serif;
+		font-size: 16px;
+		font-weight: 500;
+	}
+}
+.search-wrapper-mobile {
+	background: $dark-red;
+	padding: 30px 15px;
+	width: 100%;
 }
 #search-mobile{
 	color: #000; 
@@ -62,7 +104,7 @@ nav#my-menu {
 	width: 100%; 
 }
 .mobileBtn {
-	color: $white;
+	color: #FFFCD6;
 	font-size: 30px; 
 	padding: 5px; 
 	position:absolute; 
@@ -175,9 +217,10 @@ header {
 		background-size: contain;
 		height: 75px;
 		margin: 0 0 0 10px;
+		max-width: 80%;
 		position: relative;
 		text-align: center;
-		width: 100%;
+		width: 275px;
 		z-index: 6;
 		@include breakpoint(small) {
 			background: url('/Clovis/images/logo-secondary.png') $white no-repeat center top;
@@ -194,14 +237,18 @@ header {
 		}
 	}
 	#header-social {
-		display: table-cell;
+		display: table;
+		float: left;
+		height: 30px;
 		list-style: none;
 		margin: 0;
 		padding: 0;
 		vertical-align: middle;
 		li {
+			display: table-cell;
 			float: left;
 			margin: 0 10px 0 0;
+			vertical-align: middle;
 			a {
 				color: $black;
 				font-size: 18px;
@@ -215,6 +262,9 @@ header {
 			position: relative;
 			top: 2px;
 		}
+	}
+	.header-phone-wrapper {
+		float: left;
 	}
 	.search-icon,
 	#utility-nav,
@@ -307,6 +357,9 @@ header {
 	padding-left: 1000px;
 	position: relative;
 	z-index: 5;
+	.col-sm-12 {
+    padding-left: 0;
+	}
 	.inner-wrapper {
 		width: 100%;
 		ul#menuElem {
@@ -314,6 +367,7 @@ header {
 			float: right;
 			list-style: none;
 			margin: 0;
+	    max-width: 100%;
 			padding: 4px 0 0;
 			width: 100%;
 			> li:hover {
@@ -323,23 +377,24 @@ header {
 					text-decoration: none;
 				}
 			}
-			li {
+			> li {
 				display: table-cell;
 				position: relative;
 				vertical-align: middle;
+				width: 18%;
 				a {
 					color: $white;
 					display: inline-block;
 					font-family:'Avenir W01', sans-serif;
 					font-weight: 900;
-					font-size: 13px;
-					margin: 0 5px;
-					padding: 8px 0;
-					width: 95px;
+					font-size: 12px;
+					padding: 8px 7px;
+					@include breakpoint(medium) {
+						font-size: 13px;
+					}
 					@include breakpoint(large) {
 						font-size: 14px;
 						margin: 0 12px;
-						width: 110px;
 					}
 				}
 				&:last-child a {
@@ -355,25 +410,27 @@ header {
 					padding: 10px 0;
 					position: absolute; 
 					top: 100%; 
-					width: 225px; 
+					min-width: 225px; 
 					z-index: 9999; 
 					li {
 						display: block;
 						float: none;
 						padding: 0;
 						position: relative;
+						width: 100%;
 						&:hover {
 							background: $orange;
 						}
 						a {
+							color: $black;
+							display: block;
 							font-family:'Avenir W01', sans-serif;
 							font-size: 15px; 
-							color: $black;
-							padding: 7px 0;
 							line-height: 20px;
+							max-width: 100%;
+							padding: 7px 8px;
 							text-align: left;
 							text-transform: none;
-							width: 100%;
 						}
 						a:hover {
 							color: #fff;
@@ -433,39 +490,50 @@ input#email {
 		width: auto;
 	}
 }
+#footer-wrapper {
+	.EditingFormControlNestedControl {
+	  color: $black;
+		float: left;
+		margin: 0 5px 10px 0;
+	}
+	input::-webkit-input-placeholder {
+   color: $black;
+	}
 
-input#email::-webkit-input-placeholder {
-   color: $white;
+	input:-moz-placeholder { /* Firefox 18- */
+	   color: $black;
+	}
+
+	input::-moz-placeholder {  /* Firefox 19+ */
+	   color: $black;
+	}
+
+	input:-ms-input-placeholder {  
+	   color: $black;
+	}
 }
 
-input#email:-moz-placeholder { /* Firefox 18- */
-   color: $white;
-}
 
-input#email::-moz-placeholder {  /* Firefox 19+ */
-   color: $white;
-}
-
-input#email:-ms-input-placeholder {  
-   color: $white;
-}
-
-input#emailBtn {
+input.FormButton {
+	clear: left;
+	display: block;
 	margin: 10px 0 20px;
 	transition: color 0.25s;
 	&:hover {
 		color: $dark-grey;
 	}
 	@include breakpoint(small) {
-		margin: 0 0 0 5px;
-
+		margin: 0;
 	}
 }
 
 .contact-wrapper {
 	color: $white;
 	font-family:'Avenir W01', sans-serif;
-	text-align: right;
+	text-align: left;
+	@include breakpoint(small) {
+		text-align: right;
+	}
 	.office-name {
 		font-size: 17px;
 		font-weight: 900;
