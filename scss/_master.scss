@@ -211,6 +211,7 @@ header {
 	}
 	.site-logo-wrapper {
 		padding: 0;
+		z-index: 101;
 	}
 	#site-logo {
 		background: url('/Clovis/images/mobile-logo.png') no-repeat center;
@@ -356,7 +357,7 @@ header {
 	margin-left: -1000px;
 	padding-left: 1000px;
 	position: relative;
-	z-index: 5;
+	z-index: 100;
 	.col-sm-12 {
     padding-left: 0;
 	}
