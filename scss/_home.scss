@@ -59,6 +59,9 @@
 	margin-bottom: 0;
 	position: relative;
 	z-index: 0;
+	.slide {
+		position: relative;
+	}
 	.caption {
 		background: rgba(31,31,31,0.8);
 		bottom: 0;
@@ -67,6 +70,7 @@
 		height: 100%;
 		padding: 45px 25px 20px;
 		position: absolute;
+		width: 100%;
 		@include breakpoint(small) {
 			font-size: 22px;
 			height: auto;
@@ -196,20 +200,6 @@
 				top: -3px;
 			}
 		}
-		/*
-		li:nth-child(1):after {
-			content: "Gateway to the Sierras";
-		}
-		li:nth-child(2):after {
-			content: "Duis dolor in velit";
-		}
-		li:nth-child(3):after {
-			content: "Excepteur sint officia";
-		}
-		li:nth-child(4):after {
-			content: "Magna sed adipiscing";
-		}
-		*/
 		li button:before {
 			font-size: 16px;
 		}
@@ -359,6 +349,10 @@
 	.view-all {
     text-align: right;
     padding-right: 10px;
+    @include breakpoint(medium) {
+    	margin-top: 15px;
+    	text-align: center;
+    }
     a {
     	color: #fff;
     	&:hover {
@@ -366,6 +360,41 @@
     	}
     }
 	}
+}
+
+.FeaturedProperties {
+	height: 205px;
+	margin: 20px 0 15px;
+	.FeaturedProperty {
+		margin-bottom: 25px;
+	}
+	.FeaturedProperty_Thumbnail {
+	    display: inline-block;
+      vertical-align: top;
+	    width: 25%;
+	}
+	.FeaturedProperty_Content {
+	    display: inline-block;
+	    width: 70%;
+	}
+	.FeaturedProperty_Title {
+	  font-size: 18px;
+	}
+	.FeaturedProperty_SubTitle {
+		font-size: 13px;
+		font-style: italic;
+	}
+	.FeaturedProperty_Description {
+		font-size: 13px;
+	}
+	.FeaturedProperty_DetailsLink a {
+		display: none;
+	}
+}
+
+.featured-properties + .view-all:after {
+		content: "\f061";
+		font-family: 'FontAwesome';
 }
 
 #home-webparts-wrapper ul.news-list {
